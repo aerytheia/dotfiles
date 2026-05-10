@@ -1,7 +1,12 @@
 { self, inputs, ... }: {
-  flake.nixosModules.audio = { ... }: {
+  flake.nixosModules.audio = { pkgs, ... }: {
     services.pulseaudio.enable = false;
     security.rtkit.enable = true;
+
+    environment.systemPackages = with pkgs; [
+      wireplumber
+      pulseaudio
+    ];
 
     services.pipewire = {
       enable = true;

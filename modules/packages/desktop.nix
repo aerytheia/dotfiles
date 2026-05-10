@@ -8,11 +8,8 @@
         themeVariants = [ "default" ];
       };
     in {
-      nixpkgs.overlays = [ inputs.niri.overlays.niri ];
-
       programs.niri = {
         enable = true;
-        package = pkgs.niri;
       };
 
       hardware.graphics = {
@@ -49,18 +46,7 @@
         pkgs.gtk3
         pkgs.gtk4
         pkgs.xwayland-satellite
-        pkgs.xdg-desktop-portal-gtk
-        pkgs.xdg-desktop-portal-gnome
       ];
-
-      xdg.portal = {
-        enable = true;
-        extraPortals = [
-          pkgs.xdg-desktop-portal-gnome
-          pkgs.xdg-desktop-portal-gtk
-        ];
-        configPackages = [ pkgs.niri ];
-      };
 
       services.gvfs.enable = true;
     };

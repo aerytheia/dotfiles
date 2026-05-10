@@ -22,6 +22,7 @@
       bitwarden-desktop
       hackneyed
       vesktop
+      spotify-player
     ];
   };
 }

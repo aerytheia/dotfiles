@@ -22,8 +22,7 @@
       nvidia = {
         open = false;
         modesetting.enable = true;
-        package = config.boot.kernelPackages.nvidiaPackages.production;
-        forceFullCompositionPipeline = true;
+        package = config.boot.kernelPackages.nvidiaPackages.beta;
       };
 
       graphics = {
@@ -46,7 +45,7 @@
     environment.systemPackages = with pkgs; [
       vulkan-tools
       mesa-demos
-      libva-utils # VA-API debugging tools
+      libva-utils
     ];
   };
 }

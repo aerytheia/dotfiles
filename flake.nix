@@ -10,7 +10,6 @@
     wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
 
     hjem.url = "github:feel-co/hjem";
-    niri.url = github:sodiboo/niri-flake;
     noctalia.url = "github:noctalia-dev/noctalia-shell";    
   };
 

@@ -98,6 +98,24 @@ debug {
 spawn-at-startup "swaybg" "-c" "#000000"
 spawn-at-startup "noctalia-shell"
 
+// Enable blur behind the Alacritty terminal.
+window-rule {
+    match app-id="^Alacritty$"
+
+    background-effect {
+        blur true
+    }
+}
+
+// Enable blur behind the fuzzel launcher.
+layer-rule {
+    match namespace="^launcher$"
+
+    background-effect {
+        blur true
+    }
+}
+
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
@@ -233,7 +251,7 @@ binds {
     Mod+Shift+V { switch-focus-between-floating-and-tiling; }
     Mod+W { toggle-column-tabbed-display; }
 
-    Print { screenshot; }
+    Mod+Shift+S { screenshot; }
     Ctrl+Print { screenshot-screen; }
     Alt+Print { screenshot-window; }
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }

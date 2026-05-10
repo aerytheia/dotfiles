@@ -3,7 +3,6 @@
     modules = [ 
       self.nixosModules.prawnConfiguration
       inputs.hjem.nixosModules.default
-      inputs.niri.nixosModules.niri      
     ];
   };
 }

@@ -3,7 +3,6 @@
     modules = [ 
       self.nixosModules.lobsterConfiguration
       inputs.hjem.nixosModules.default
-      inputs.niri.nixosModules.niri      
     ];
   };
 }
