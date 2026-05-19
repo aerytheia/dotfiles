@@ -10,7 +10,7 @@
     wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
 
     hjem.url = "github:feel-co/hjem";
-    noctalia.url = "github:noctalia-dev/noctalia-shell";    
+    noctalia.url = "github:noctalia-dev/noctalia-shell/v5";
   };
 
   outputs = inputs: inputs.flake-parts.lib.mkFlake

@@ -1,5 +1,3 @@
-# my common software between my machines
-
 { self, inputs, ... }: {
   flake.nixosModules.games = { pkgs, ... }: {
     programs.steam = {

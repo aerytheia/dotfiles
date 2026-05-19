@@ -6,16 +6,10 @@
       files = {
         ".ssh/allowed_signers".source = ../../home/ssh/allowed_signers;
         ".gitconfig".source = ../../home/gitconfig;
-
         ".config/niri/config.kdl".source = ../../home/niri/config.kdl;
-        # copies instead of symlinks
-        ".config/noctalia/colors.json" = {
-          source = ../../home/noctalia/colors.json;
-          type = "copy";
-          permissions = "644";
-        };
-        ".config/noctalia/settings.json" = {
-          source = ../../home/noctalia/settings.json;
+
+        ".config/noctalia/settings.toml" = {
+          source = ../../home/noctalia/settings.toml;
           type = "copy";
           permissions = "644";
         };

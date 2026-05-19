@@ -96,20 +96,11 @@ debug {
 }
 
 spawn-at-startup "swaybg" "-c" "#000000"
-spawn-at-startup "noctalia-shell"
+spawn-at-startup "noctalia"
 
 // Enable blur behind the Alacritty terminal.
 window-rule {
     match app-id="^Alacritty$"
-
-    background-effect {
-        blur true
-    }
-}
-
-// Enable blur behind the fuzzel launcher.
-layer-rule {
-    match namespace="^launcher$"
 
     background-effect {
         blur true
@@ -123,16 +114,16 @@ binds {
     Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
 
     // noctalia binds :)
-    XF86AudioRaiseVolume allow-when-locked=true  { spawn-sh "noctalia-shell ipc call volume increase"; }
-    XF86AudioLowerVolume allow-when-locked=true  { spawn-sh "noctalia-shell ipc call volume decrease"; }
-    XF86AudioMute        allow-when-locked=true  { spawn-sh "noctalia-shell ipc call volume muteOutput"; }
-    XF86AudioMicMute     allow-when-locked=true  { spawn-sh "noctalia-shell ipc call volume muteInput"; }
-    XF86AudioPlay        allow-when-locked=true  { spawn-sh "noctalia-shell ipc call media playPause"; }
-    XF86AudioStop        allow-when-locked=true  { spawn-sh "noctalia-shell ipc call media stop"; }
-    XF86AudioPrev        allow-when-locked=true  { spawn-sh "noctalia-shell ipc call previous"; }
-    XF86AudioNext        allow-when-locked=true  { spawn-sh "noctalia-shell ipc call next"; }
-    XF86MonBrightnessUp allow-when-locked=true   { spawn-sh "noctalia-shell ipc call brightness increase"; }
-    XF86MonBrightnessDown allow-when-locked=true { spawn-sh "noctalia-shell ipc call brightness decrease"; }
+    XF86AudioRaiseVolume allow-when-locked=true  { spawn-sh "noctalia msg volume-up"; }
+    XF86AudioLowerVolume allow-when-locked=true  { spawn-sh "noctalia msg volume-down"; }
+    XF86AudioMute        allow-when-locked=true  { spawn-sh "noctalia msg volume-mute"; }
+    XF86AudioMicMute     allow-when-locked=true  { spawn-sh "noctalia msg mic-mute"; }
+    XF86AudioPlay        allow-when-locked=true  { spawn-sh "noctalia msg media toggle"; }
+    XF86AudioStop        allow-when-locked=true  { spawn-sh "noctalia msg media stop"; }
+    XF86AudioPrev        allow-when-locked=true  { spawn-sh "noctalia msg media previous"; }
+    XF86AudioNext        allow-when-locked=true  { spawn-sh "noctalia msg media next"; }
+    XF86MonBrightnessUp allow-when-locked=true   { spawn-sh "noctalia msg brightness-up"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn-sh "noctalia msg brightness-down"; }
 
     Mod+O repeat=false { toggle-overview; }
     Mod+Q repeat=false { close-window; }

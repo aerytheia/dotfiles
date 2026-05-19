@@ -1,0 +1,60 @@
+[audio]
+enable_sounds = true
+
+[bar]
+order = [ "PC" ]
+
+    [bar.PC]
+    center = [ "active_window" ]
+    end = [ "tray", "clipboard", "network", "bluetooth", "volume", "battery", "notifications", "clock" ]
+    margin_edge = 0
+    margin_ends = 0
+    padding = 8
+    radius = 0
+    start = [ "control-center", "workspaces" ]
+    thickness = 20
+
+[desktop_widgets]
+enabled = false
+
+[idle]
+pre_action_fade_seconds = 0.0
+
+[osd]
+position = "bottom_center"
+
+[shell]
+avatar_path = "/home/ethan/.dotfiles/assets/face.jpg"
+font_family = "JetBrainsMono Nerd Font"
+
+    [shell.panel]
+    open_near_click_control_center = true
+
+[theme]
+builtin = "Tokyo-Night"
+
+    [theme.templates]
+    enable_builtin_templates = false
+    enable_community_templates = false
+
+[wallpaper]
+directory = "/home/ethan/.dotfiles/assets"
+
+    [wallpaper.default]
+    path = "/home/ethan/.dotfiles/assets/wallpaper.png"
+
+    [wallpaper.last]
+    path = "/home/ethan/.dotfiles/assets/wallpaper.png"
+
+    [wallpaper.monitors.DP-4]
+    path = "/home/ethan/.dotfiles/assets/wallpaper.png"
+
+[weather]
+address = "Wollongong"
+
+[widget.active_window]
+anchor = false
+max_length = 500.0
+
+[widget.control-center]
+glyph = "ghost-filled"

@@ -5,12 +5,10 @@
     environment.systemPackages = with pkgs; [
       swaybg
       alacritty
-      inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
       fuzzel
       fastfetch
       git
       helix
-      gtk4
 
       nixd
       nixfmt

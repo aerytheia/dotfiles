@@ -41,6 +41,7 @@
 
       environment.systemPackages = [
         theme
+        inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
         pkgs.adwaita-icon-theme
         pkgs.nautilus
         pkgs.gtk3
