@@ -8,5 +8,10 @@
     environment.variables = {
       STEAM_USE_NIX_FONTS = "1";
     };
+
+    services.flatpak.packages = [
+      # roblox 
+      "org.vinegarhq.Sober"
+    ];
   };
 }

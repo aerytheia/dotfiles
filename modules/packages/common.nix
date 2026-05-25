@@ -2,6 +2,8 @@
 
 { self, inputs, ... }: {
   flake.nixosModules.common = { pkgs, ... }: {
+    services.flatpak.enable = true;
+
     environment.systemPackages = with pkgs; [
       swaybg
       alacritty
@@ -9,6 +11,7 @@
       fastfetch
       git
       helix
+      devenv
 
       nixd
       nixfmt

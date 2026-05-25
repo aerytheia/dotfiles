@@ -7,6 +7,8 @@
     flake-parts.url = "github:hercules-ci/flake-parts";
     import-tree.url = "github:vic/import-tree";
 
+    nix-flatpak.url = "github:gmodena/nix-flatpak";
+
     wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
 
     hjem.url = "github:feel-co/hjem";

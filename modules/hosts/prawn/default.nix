@@ -3,6 +3,7 @@
     modules = [ 
       self.nixosModules.prawnConfiguration
       inputs.hjem.nixosModules.default
+      inputs.nix-flatpak.nixosModules.nix-flatpak
     ];
   };
 }

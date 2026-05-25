@@ -73,6 +73,21 @@
         "type": "github"
       }
     },
+    "nix-flatpak": {
+      "locked": {
+        "lastModified": 1777402031,
+        "narHash": "sha256-6gkfl9y3+ti0Z6dgby8/R4/DRT8sWU0I0TLCIxwWtjk=",
+        "owner": "gmodena",
+        "repo": "nix-flatpak",
+        "rev": "22a3adbe7c5c8c8a10a635d32c9ef7fc01a6e4b8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "gmodena",
+        "repo": "nix-flatpak",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1777954456,
@@ -151,11 +166,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1779154283,
-        "narHash": "sha256-axeAq6zGcYN8OlHOfuA5NJGV0IPv2zqOKOPtsaE6Lxw=",
+        "lastModified": 1779252046,
+        "narHash": "sha256-ruqB1z979EQtSCxkbb3DFXy3zUUrEnDVxPuN+s6QjZ4=",
         "owner": "noctalia-dev",
         "repo": "noctalia-shell",
-        "rev": "6c05ddc3982ed1711a76a817a78b7deb7c753531",
+        "rev": "e26fe1e725788fb30b01de94ba2917bc072e716b",
         "type": "github"
       },
       "original": {
@@ -170,6 +185,7 @@
         "flake-parts": "flake-parts",
         "hjem": "hjem",
         "import-tree": "import-tree",
+        "nix-flatpak": "nix-flatpak",
         "nixpkgs": "nixpkgs_2",
         "noctalia": "noctalia",
         "wrapper-modules": "wrapper-modules"
@@ -180,11 +196,11 @@
         "nixpkgs": "nixpkgs_4"
       },
       "locked": {
-        "lastModified": 1779078555,
-        "narHash": "sha256-p18v4DHcVqAUwstamlftM+oMsC2Ca2eWX5rlg8o6W+Q=",
+        "lastModified": 1779230126,
+        "narHash": "sha256-4XXww17gSEQys+RFe2nlFS6eFl6KIChdW7hy5MlZyYE=",
         "owner": "BirdeeHub",
         "repo": "nix-wrapper-modules",
-        "rev": "a4d6ea205928bad051089079edba7a1e35a80a2a",
+        "rev": "c2b76d39f5db070fe947e78dfc7d034874bcaf03",
         "type": "github"
       },
       "original": {
