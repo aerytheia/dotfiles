@@ -12,6 +12,7 @@
     wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
 
     hjem.url = "github:feel-co/hjem";
+    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     noctalia.url = "github:noctalia-dev/noctalia-shell/v5";
   };
 

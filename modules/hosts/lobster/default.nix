@@ -4,6 +4,7 @@
       self.nixosModules.lobsterConfiguration
       inputs.hjem.nixosModules.default
       inputs.nix-flatpak.nixosModules.nix-flatpak
+      inputs.spicetify-nix.nixosModules.spicetify
     ];
   };
 }

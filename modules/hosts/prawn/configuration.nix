@@ -8,6 +8,7 @@
       self.nixosModules.desktop
       self.nixosModules.firefox
       self.nixosModules.fonts
+      self.nixosModules.games
       self.nixosModules.hjem
       self.nixosModules.locale
       self.nixosModules.networking
@@ -16,6 +17,7 @@
     ];
 
     networking.hostName = "prawn";
+    networking.networkmanager.enable = true;
 
     services.openssh = {
       enable = true;
