@@ -13,7 +13,7 @@
 
     hjem.url = "github:feel-co/hjem";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
-    noctalia.url = "github:noctalia-dev/noctalia-shell/v5";
+    noctalia.url = "github:noctalia-dev/noctalia";
   };
 
   outputs = inputs: inputs.flake-parts.lib.mkFlake

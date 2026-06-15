@@ -1,5 +1,17 @@
 { self, inputs, ... }: {
   flake.nixosModules.firefox = { ... }: {
+    programs.thunderbird = {
+      enable = true;
+
+      preferences = {
+        
+      };
+
+      policies = {
+        DisableTelemetry = true;
+      };
+    };
+
     programs.firefox = {
       enable = true;
 
