@@ -5,7 +5,11 @@
     boot.loader.timeout = 0;
 
     boot.consoleLogLevel = 0;
-    boot.kernelParams = [ "quiet" "splash" "udev.log_level=0" ];
+    boot.kernelParams = [
+      "quiet"
+      "splash"
+      "udev.log_level=0"
+    ];
     systemd.settings.Manager.ShowStatus = "no";
 
     boot.plymouth = {

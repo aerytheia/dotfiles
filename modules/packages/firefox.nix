@@ -4,7 +4,7 @@
       enable = true;
 
       preferences = {
-        
+
       };
 
       policies = {
@@ -30,16 +30,15 @@
         "browser.tabs.groups.smart.userEnabled" = false;
         "browser.translations.enable" = false;
         "extensions.ml.enabled" = false;
-        "pdfjs.enableAltText" = false;   
+        "pdfjs.enableAltText" = false;
 
-
-        # tweaks    
+        # tweaks
         "browser.tabs.firefox-view" = false;
         "browser.urlbar.scotchBonnet.enableOverride" = false;
         "browser.newtabpage.activity-stream.feeds.topsites" = false;
         "browser.newtabpage.activity-stream.showSponsored" = false;
         "browser.toolbars.bookmarks.visibility" = "never";
-        
+
       };
 
       policies = {

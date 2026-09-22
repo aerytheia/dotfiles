@@ -8,7 +8,7 @@
       "nvidia-drm.modeset=1"
     ];
 
-    boot.blacklistedKernelModules = ["nouveau"];
+    boot.blacklistedKernelModules = [ "nouveau" ];
 
     environment.variables = {
       NIXOS_OZONE_WL = "1"; # Wayland support for Electron apps
@@ -41,7 +41,6 @@
       };
     };
 
-
     environment.systemPackages = with pkgs; [
       vulkan-tools
       mesa-demos
@@ -49,4 +48,3 @@
     ];
   };
 }
-

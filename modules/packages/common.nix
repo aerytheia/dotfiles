@@ -1,43 +1,66 @@
 # my common software between my machines
 
 { self, inputs, ... }: {
-  flake.nixosModules.common = { pkgs, ... }:
-  let
-    spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
-  in {
-    services.flatpak.enable = true;
+  flake.nixosModules.common =
+    { pkgs, ... }:
+    let
+      spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
+      jdkWithFX = pkgs.openjdk.override {
+        enableJavaFX = true; # for JavaFX
+      };
 
-    environment.systemPackages = with pkgs; [
-      swaybg
-      alacritty
-      fuzzel
-      fastfetch
-      git
-      helix
-      devenv
+    in
+    {
+      services.flatpak.enable = true;
 
-      nixd
-      nixfmt
-    ];
+      environment.systemPackages = with pkgs; [
+        swaybg
+        alacritty
+        kitty
+        fuzzel
+        fastfetch
+        git
+        helix
+        devenv
 
-    # for bitwarden :(
-    nixpkgs.config.permittedInsecurePackages = [ "electron-39.8.10" ];    
+        jdkWithFX
+        aria2
 
-    # maybe export my user or smthn
-    users.users.ethan.packages = with pkgs; [
-      vscodium
-      bitwarden-desktop
-      hackneyed
-      vesktop
-    ];
+        nixd
+        nixfmt
+      ];
 
-    programs.direnv = {
-      enable = true;
-      nix-direnv.enable = true;
+      # maybe export my user or smthn
+      users.users.ethan.packages = with pkgs; [
+        vscodium
+        bitwarden-desktop
+        hackneyed
+        anki
+
+        (discord.override {
+          withVencord = true;
+        })
+
+        blender
+        gimp
+      ];
+
+      programs.direnv = {
+        enable = true;
+        nix-direnv.enable = true;
+      };
+
+      programs.nix-ld = {
+        enable = true;
+        libraries = with pkgs; [
+          alsa-lib
+          zlib
+          libgcc
+        ];
+      };
+
+      programs.spicetify = {
+        enable = true;
+      };
     };
-
-    programs.spicetify = {
-      enable = true;
-    };
-  };
 }

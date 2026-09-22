@@ -2,9 +2,14 @@
   flake.nixosModules.user = { ... }: {
     users.users.ethan = {
       isNormalUser = true;
-      extraGroups = [ "networkmanager" "wheel" "video" "audio"];
+      extraGroups = [
+        "networkmanager"
+        "wheel"
+        "video"
+        "audio"
+      ];
     };
 
-    nix.settings.trusted-users = [ "ethan" ];    
+    nix.settings.trusted-users = [ "ethan" ];
   };
 }
