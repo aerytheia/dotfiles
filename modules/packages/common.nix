@@ -5,25 +5,18 @@
     { pkgs, ... }:
     let
       spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
-      jdkWithFX = pkgs.openjdk.override {
-        enableJavaFX = true; # for JavaFX
-      };
-
     in
     {
       services.flatpak.enable = true;
 
       environment.systemPackages = with pkgs; [
-        swaybg
         alacritty
         kitty
         fuzzel
         fastfetch
         git
-        helix
-        devenv
+        nautilus
 
-        jdkWithFX
         aria2
 
         nixd
@@ -32,17 +25,15 @@
 
       # maybe export my user or smthn
       users.users.ethan.packages = with pkgs; [
-        vscodium
+        gram
         bitwarden-desktop
         hackneyed
-        anki
+        obsidian
 
         (discord.override {
           withVencord = true;
         })
 
-        blender
-        gimp
       ];
 
       programs.direnv = {

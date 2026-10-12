@@ -1,0 +1,2 @@
+XKB_DEFAULT_LAYOUT=us
+SSH_AUTH_SOCK="/home/ethan/.bitwarden-ssh-agent.sock"

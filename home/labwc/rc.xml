@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<labwc_config>
+  <core>
+    <primarySelection>no</primarySelection>
+  </core>
+  <windowSwitcher preview="yes" outlines="yes">
+    <osd show="yes" style="classic" output="all" thumbnailLabelFormat="%T"/>
+    <fields>
+      <field content="icon" width="5%"/>
+      <field content="desktop_entry_name" width="20%"/>
+      <field content="identifier" width="20%"/>
+      <field content="title" width="55%"/>
+    </fields>
+  </windowSwitcher>
+  <windowRules>
+    <windowRule identifer="app.liten.Gram">
+      <action name="ToggleDecorations"/>
+    </windowRule>
+  </windowRules>
+  <keyboard>
+    <default/>
+    <!-- The W- prefix refers to the Super key -->
+    <keybind key="W-d">
+      <action name="Execute" command="fuzzel"/>
+    </keybind>
+  </keyboard>
+  <theme>
+    <dropShadows>yes</dropShadows>
+    <icon>Hackneyed</icon>
+    <name>labTeallach</name>
+  </theme>
+  <libinput>
+    <device>
+      <accelProfile>flat</accelProfile>
+    </device>
+  </libinput>
+</labwc_config>

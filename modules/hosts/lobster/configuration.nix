@@ -14,6 +14,7 @@
       self.nixosModules.networking
       self.nixosModules.nix
       self.nixosModules.nvidia
+      self.nixosModules.university
       self.nixosModules.user
     ];
 

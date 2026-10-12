@@ -4,7 +4,12 @@
     hjem.users.ethan = {
       directory = "/home/ethan";
 
-      xdg.config.files."niri/config.kdl".source = ../../home/niri/config.kdl;
+      xdg.config.files = {
+        "labwc/autostart".source = ../../home/labwc/autostart;
+        "labwc/environment".source = ../../home/labwc/environment;
+        "labwc/menu.xml".source = ../../home/labwc/menu.xml;
+        "labwc/rc.xml".source = ../../home/labwc/rc.xml;
+      };
 
       files = {
         ".ssh/allowed_signers".source = ../../home/ssh/allowed_signers;

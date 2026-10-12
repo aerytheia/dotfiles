@@ -13,6 +13,7 @@
       self.nixosModules.locale
       self.nixosModules.networking
       self.nixosModules.nix
+      self.nixosModules.university
       self.nixosModules.user
     ];
 
