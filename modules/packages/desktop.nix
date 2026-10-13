@@ -15,10 +15,14 @@
     }];
 
     environment.systemPackages = with pkgs; [
+      swaybg
       wineWow64Packages.full
       winetricks
       wlr-randr
+      inputs.matugen.packages.${system}.default
     ];
+
+    programs.waybar.enable = true;
 
     services.gvfs.enable = true;
   };

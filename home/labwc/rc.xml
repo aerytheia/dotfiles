@@ -3,8 +3,9 @@
   <core>
     <primarySelection>no</primarySelection>
   </core>
+
   <windowSwitcher preview="yes" outlines="yes">
-    <osd show="yes" style="classic" output="all" thumbnailLabelFormat="%T"/>
+    <osd show="yes" style="thumbnail"/>
     <fields>
       <field content="icon" width="5%"/>
       <field content="desktop_entry_name" width="20%"/>
@@ -12,26 +13,99 @@
       <field content="title" width="55%"/>
     </fields>
   </windowSwitcher>
-  <windowRules>
-    <windowRule identifer="app.liten.Gram">
-      <action name="ToggleDecorations"/>
-    </windowRule>
-  </windowRules>
+
+  <desktops number="5"></desktops>
+
   <keyboard>
-    <default/>
-    <!-- The W- prefix refers to the Super key -->
     <keybind key="W-d">
       <action name="Execute" command="fuzzel"/>
     </keybind>
+    <keybind key="A-Tab">
+      <action name="NextWindow" workspace="current" output="all" identifier="all" />
+    </keybind>
+
+    <keybind key="W-Tab">
+      <action name="NextWindow" workspace="all" output="all" identifier="all" />
+    </keybind>
+
+    <keybind key="W-t">
+      <action name="Execute" command="alacritty"/>
+    </keybind>
+
+    <keybind key="W-q">
+      <action name="Kill"/>
+    </keybind>
+
+    <keybind key="W-f">
+      <action name="ToggleMaximize"/>
+    </keybind>
+
+    <keybind key="W-S-f">
+      <action name="ToggleFullscreen"/>
+    </keybind>
+
+    <keybind key="W-Left">
+      <action name="ToggleSnapToEdge" direction="left" combine="yes"/>
+    </keybind>
+
+    <keybind key="W-Right">
+      <action name="ToggleSnapToEdge" direction="right" combine="yes"/>
+    </keybind>
+
+    <keybind key="W-Up">
+      <action name="ToggleSnapToEdge" direction="up" combine="yes"/>
+    </keybind>
+
+    <keybind key="W-Down">
+      <action name="ToggleSnapToEdge" direction="down" combine="yes"/>
+    </keybind> -->
+
+    <keybind key="W-1">
+      <action name="GoToDesktop" to="1"/>
+    </keybind>
+    <keybind key="W-2">
+      <action name="GoToDesktop" to="2"/>
+    </keybind>
+    <keybind key="W-3">
+      <action name="GoToDesktop" to="3"/>
+    </keybind>
+    <keybind key="W-4">
+      <action name="GoToDesktop" to="4"/>
+    </keybind>
+    <keybind key="W-5">
+      <action name="GoToDesktop" to="5"/>
+    </keybind>
+    <keybind key="W-S-1">
+      <action name="SendToDesktop" to="1"/>
+    </keybind>
+    <keybind key="W-S-2">
+      <action name="SendToDesktop" to="2"/>
+    </keybind>
+    <keybind key="W-S-3">
+      <action name="SendToDesktop" to="3"/>
+    </keybind>
+    <keybind key="W-S-4">
+      <action name="SendToDesktop" to="4"/>
+    </keybind>
+    <keybind key="W-S-5">
+      <action name="SendToDesktop" to="5"/>
+    </keybind>
   </keyboard>
+
+
+
   <theme>
-    <dropShadows>yes</dropShadows>
+    <name>test</name>
+
     <icon>Hackneyed</icon>
-    <name>labTeallach</name>
+    <dropShadows>yes</dropShadows>
+    <cornerRadius>0</cornerRadius>
   </theme>
+
   <libinput>
     <device>
       <accelProfile>flat</accelProfile>
     </device>
   </libinput>
+
 </labwc_config>

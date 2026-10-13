@@ -1,0 +1,7 @@
+border.width: 2
+
+window.*.title.bg: Gradient SplitVertical
+window.*.title.bg.color: #024b71
+window.*.title.bg.color.splitTo: #97ccf9
+window.*.title.bg.colorTo: #024b71
+window.*.title.bg.colorTo.splitTo: #97ccf9

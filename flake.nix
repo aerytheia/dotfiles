@@ -11,6 +11,7 @@
 
     hjem.url = "github:feel-co/hjem";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
+    matugen.url = "github:InioX/Matugen";
   };
 
   outputs = inputs: inputs.flake-parts.lib.mkFlake

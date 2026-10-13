@@ -11,14 +11,11 @@
 
       environment.systemPackages = with pkgs; [
         alacritty
-        kitty
         fuzzel
         fastfetch
         git
-        nautilus
-
+        kdePackages.dolphin
         aria2
-
         nixd
         nixfmt
       ];
@@ -29,11 +26,12 @@
         bitwarden-desktop
         hackneyed
         obsidian
-
+        gimp
+        inkscape
+        imagemagick
         (discord.override {
           withVencord = true;
         })
-
       ];
 
       programs.direnv = {

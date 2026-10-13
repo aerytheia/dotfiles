@@ -1,0 +1,19 @@
+[config]
+
+[templates.labwc]
+input_path = '~/.config/matugen/templates/labwc'
+output_path = '~/.config/labwc/themerc-override'
+post_hook = 'labwc -reload'
+
+[templates.fuzzel]
+input_path = '~/.config/matugen/templates/fuzzel.ini'
+output_path = '~/.config/fuzzel/colors.ini'
+
+[templates.alacritty]
+input_path = '~/.config/matugen/templates/alacritty.toml'
+output_path = '~/.config/alacritty/colors.toml'
+
+[templates.waybar]
+input_path = '~/.config/matugen/templates/colors.css'
+output_path = '~/.config/waybar/colors.css'
+post_hook = 'pkill -SIGUSR2 waybar'
