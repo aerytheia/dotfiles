@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="22"
+   height="22"
+   viewBox="0 0 22 22.000002"
+   version="1.1"
+   id="svg1068"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs
+     id="defs1062" />
+  <metadata
+     id="metadata1065">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1"
+     transform="translate(-39.883728,-1054.2675)">
+    <g
+       id="g7">
+      <path
+         fill="#000000"
+         d="m 48.280516,1066.791 1.078023,1.0784 c -1.062768,0.9004 -2.618782,2.2993 -2.939138,2.5537 -0.813602,0.6358 -1.535674,0.8444 -1.535674,0.8444 0,0 0.203401,-0.7224 0.844112,-1.5363 0.254251,-0.3255 1.65263,-1.877 2.552677,-2.9402 z m 8.375016,-4.4053 -2.888287,-2.8893 c -0.305101,-0.3052 -0.803432,-0.3052 -1.108533,0 -0.305101,0.3052 -0.305101,0.8037 0,1.1089 l 0.228826,0.2289 -4.220561,2.981 -0.935642,-0.936 c -0.305101,-0.3052 -0.803432,-0.3052 -1.108533,0 -0.305101,0.3052 -0.305101,0.8037 0,1.1089 l 5.537579,5.5397 c 0.305101,0.3052 0.803432,0.3052 1.108533,0 0.305101,-0.3053 0.305101,-0.8038 0,-1.109 l -0.935643,-0.936 2.979818,-4.2272 0.228826,0.2289 c 0.3051,0.3052 0.803432,0.3052 1.108532,0 0.310186,-0.3001 0.310186,-0.7935 0.0051,-1.0988 z"
+         id="path1-3"
+         style="display:inline;fill:{{colors.on_primary_container.default.hex}};stroke-width:0.0593358" />
+      <rect
+         style="display:inline;fill:none;fill-opacity:1;stroke:{{colors.primary_container.default.hex}};stroke-width:0.999997;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
+         id="rect9"
+         width="19"
+         height="19"
+         x="41.383728"
+         y="1055.7675"
+         rx="1.5"
+         ry="1.5" />
+      <rect
+         style="display:inline;fill:none;fill-opacity:0.54066;stroke:{{colors.on_primary_fixed.default.hex}};stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
+         id="rect9-6"
+         width="21"
+         height="21"
+         x="40.383728"
+         y="1054.7675"
+         rx="2.5"
+         ry="2.5" />
+    </g>
+  </g>
+</svg>

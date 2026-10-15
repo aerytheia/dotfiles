@@ -32,6 +32,10 @@
       <action name="Execute" command="alacritty"/>
     </keybind>
 
+    <keybind key="W-S-s">
+        <action name="Execute" command="slurp | grim -g - - | wl-copy"/>
+    </keybind>
+
     <keybind key="W-q">
       <action name="Kill"/>
     </keybind>
@@ -99,7 +103,11 @@
 
     <icon>Hackneyed</icon>
     <dropShadows>yes</dropShadows>
-    <cornerRadius>0</cornerRadius>
+
+    <font>
+        <name>JetBrains Mono Nerd Font</name>
+        <weight>bold</weight>
+    </font>
   </theme>
 
   <libinput>

@@ -4,9 +4,9 @@
       self.nixosModules.lobsterHardware
       self.nixosModules.audio
       self.nixosModules.boot
+      self.nixosModules.browser
       self.nixosModules.common
       self.nixosModules.desktop
-      self.nixosModules.firefox
       self.nixosModules.games
       self.nixosModules.fonts
       self.nixosModules.hjem
@@ -28,4 +28,4 @@
     hardware.bluetooth.enable = true;
     system.stateVersion = "26.05";
   };
-} 
+}

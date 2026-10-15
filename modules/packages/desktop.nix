@@ -19,7 +19,10 @@
       wineWow64Packages.full
       winetricks
       wlr-randr
-      inputs.matugen.packages.${system}.default
+      grim
+      slurp
+      wl-clipboard
+      inputs.matugen.packages.${stdenv.hostPlatform.system}.default
     ];
 
     programs.waybar.enable = true;

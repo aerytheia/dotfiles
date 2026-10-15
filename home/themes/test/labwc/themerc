@@ -1,7 +1,10 @@
-border.width: 2
+border.width: 0
 
-window.*.title.bg: Gradient SplitVertical
-window.*.title.bg.color: #024b71
-window.*.title.bg.color.splitTo: #97ccf9
-window.*.title.bg.colorTo: #024b71
-window.*.title.bg.colorTo.splitTo: #97ccf9
+window.button.width: 22
+window.button.height: 22
+window.titlebar.padding.width: 3
+window.titlebar.padding.height: 4
+window.button.spacing: 3
+
+window.active.title.bg: Gradient SplitVertical
+window.inactive.title.bg: Gradient Vertical

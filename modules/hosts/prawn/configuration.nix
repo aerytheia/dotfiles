@@ -4,9 +4,9 @@
       self.nixosModules.prawnHardware
       self.nixosModules.audio
       self.nixosModules.boot
+      self.nixosModules.browser
       self.nixosModules.common
       self.nixosModules.desktop
-      self.nixosModules.firefox
       self.nixosModules.fonts
       self.nixosModules.games
       self.nixosModules.hjem
@@ -31,4 +31,4 @@
 
     system.stateVersion = "26.05";
   };
-} 
+}
