@@ -2,8 +2,8 @@ border.width: 0
 
 window.button.width: 22
 window.button.height: 22
-window.titlebar.padding.width: 3
-window.titlebar.padding.height: 4
+window.titlebar.padding.width: 4
+window.titlebar.padding.height: 2
 window.button.spacing: 3
 
 window.active.title.bg: Gradient SplitVertical
