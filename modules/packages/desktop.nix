@@ -8,6 +8,7 @@
     security.polkit.enable = true;
 
     programs.labwc.enable = true;
+    programs.wayfire.enable = true;
     services.displayManager.ly.enable = true;
 
     programs.dconf.profiles.user.databases = [{
@@ -19,6 +20,7 @@
       wineWow64Packages.full
       winetricks
       wlr-randr
+      dunst
       grim
       slurp
       wl-clipboard

@@ -33,7 +33,9 @@
     </keybind>
 
     <keybind key="W-S-s">
-        <action name="Execute" command="slurp | grim -g - - | wl-copy"/>
+        <action name="Execute">
+            <command>sh -c 'grim -g "$(slurp)" - | wl-copy -t image/png'</command>
+        </action>
     </keybind>
 
     <keybind key="W-q">
@@ -113,6 +115,12 @@
   <libinput>
     <device>
       <accelProfile>flat</accelProfile>
+    </device>
+
+    <device category="touchpad">
+        <naturalScroll>yes</naturalScroll>
+        <tap>yes</tap>
+        <middleEmulation>yes</middleEmulation>
     </device>
   </libinput>
 

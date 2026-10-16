@@ -18,6 +18,8 @@
 
         "waybar/config.jsonc".source = ../../home/waybar/config.jsonc;
         "waybar/style.css".source = ../../home/waybar/style.css;
+
+        "wayfire.ini".source = ../../home/wayfire/wayfire.ini;
       };
 
       files = {
