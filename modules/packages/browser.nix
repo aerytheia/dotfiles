@@ -18,6 +18,8 @@
         "browser.tabs.inTitlebar" = 0;
         "browser.nova.enabled" = false;
 
+        "media.videocontrols.picture-in-picture.video-toggle.enabled" = false;
+        "media.videocontrols.picture-in-picture.audio-toggle.enabled" = false;
 
         "browser.uiCustomization.state" = builtins.toJSON {
           placements = {

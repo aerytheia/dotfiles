@@ -8,9 +8,10 @@
     security.polkit.enable = true;
 
     programs.labwc.enable = true;
-    programs.wayfire.enable = true;
     services.displayManager.ly.enable = true;
 
+
+    programs.dconf.enable = true;
     programs.dconf.profiles.user.databases = [{
       settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
     }];
@@ -20,15 +21,17 @@
       wineWow64Packages.full
       winetricks
       wlr-randr
-      dunst
+      mako
+      pywalfox-native
       grim
       slurp
+      wob
+      kanshi
+      waybar
       wl-clipboard
       inputs.matugen.packages.${stdenv.hostPlatform.system}.default
     ];
-
-    programs.waybar.enable = true;
-
+    
     services.gvfs.enable = true;
   };
 }

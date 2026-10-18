@@ -1,5 +1,6 @@
-wlr-randr --output DP-4 --mode 3440x1440@144.001007Hz
-wlr-randr --output eDP-1 --scale 1.25
-swaybg -i /home/ethan/.dotfiles/assets/wallpaper.png
-waybar >/dev/null 2>&1 &
-dunst >/dev/null 2>&1 &
+kanshi >/dev/null 2>&1 &
+mako >/dev/null 2>&1 &
+waybar --log-level off &
+swaybg -i /home/ethan/.dotfiles/assets/wallpaper.png >/dev/null 2>&1 &
+ 
+(rm -f $WOBSOCK && mkfifo $WOBSOCK && tail -f $WOBSOCK | wob) >/dev/null 2>&1 &

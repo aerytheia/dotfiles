@@ -1,47 +1,14 @@
 [config]
 
-
-
-## OUTER BORDER on_primary_fixed
-## INNER BORDER: primary container
-## BUTTON COLOR: on_primary_container
-
-[templates.labwc-close-active]
-input_path = '~/.config/matugen/templates/labwc/icons/close.svg'
-output_path = '~/.themes/test/labwc/close-active.svg'
-
-[templates.labwc-close-inactive]
-input_path = '~/.config/matugen/templates/labwc/icons/close.svg'
-output_path = '~/.themes/test/labwc/close-inactive.svg'
-
-[templates.labwc-iconify-active]
-input_path = '~/.config/matugen/templates/labwc/icons/minimize.svg'
-output_path = '~/.themes/test/labwc/iconify-active.svg'
-
-[templates.labwc-iconify-inactive]
-input_path = '~/.config/matugen/templates/labwc/icons/minimize.svg'
-output_path = '~/.themes/test/labwc/iconify-inactive.svg'
-
-[templates.labwc-max-active]
-input_path = '~/.config/matugen/templates/labwc/icons/maximize.svg'
-output_path = '~/.themes/test/labwc/max-active.svg'
-
-[templates.labwc-max-inactive]
-input_path = '~/.config/matugen/templates/labwc/icons/maximize.svg'
-output_path = '~/.themes/test/labwc/max-inactive.svg'
-
-[templates.labwc-max_toggled-active]
-input_path = '~/.config/matugen/templates/labwc/icons/restore.svg'
-output_path = '~/.themes/test/labwc/max_toggled-active.svg'
-
-[templates.labwc-max_toggled-inactive]
-input_path = '~/.config/matugen/templates/labwc/icons/restore.svg'
-output_path = '~/.themes/test/labwc/max_toggled-inactive.svg'
-
 [templates.labwc]
-input_path = '~/.config/matugen/templates/labwc/themerc-override'
+input_path = '~/.config/matugen/templates/labwc'
 output_path = '~/.config/labwc/themerc-override'
 post_hook = 'labwc -reload'
+
+[templates.pywalfox]
+input_path = '~/.config/matugen/templates/pywalfox-colors.json'
+output_path = '~/.cache/wal/colors.json'
+post_hook = 'pywalfox update'
 
 [templates.fuzzel]
 input_path = '~/.config/matugen/templates/fuzzel.ini'
@@ -55,3 +22,7 @@ output_path = '~/.config/alacritty/colors.toml'
 input_path = '~/.config/matugen/templates/colors.css'
 output_path = '~/.config/waybar/colors.css'
 post_hook = 'pkill -SIGUSR2 waybar'
+
+[templates.vencord]
+input_path = '~/.config/matugen/templates/system24.css'
+output_path = '~/.config/Vencord/themes/system24.css'

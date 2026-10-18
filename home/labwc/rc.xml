@@ -50,6 +50,37 @@
       <action name="ToggleFullscreen"/>
     </keybind>
 
+    <keybind key="XF86AudioRaiseVolume">
+      <action name="Execute">
+          <command><![CDATA[
+            sh -c "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ && wpctl get-volume @DEFAULT_AUDIO_SINK@ | sed 's/[^0-9]//g' > $WOBSOCK"
+          ]]></command>
+      </action>
+    </keybind>
+
+    <keybind key="XF86AudioLowerVolume">
+      <action name="Execute">
+          <command><![CDATA[
+            sh -c "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- && wpctl get-volume @DEFAULT_AUDIO_SINK@ | sed 's/[^0-9]//g' > $WOBSOCK"
+          ]]></command>
+      </action>
+    </keybind>
+
+    <keybind key="XF86AudioMute">
+      <action name="Execute">
+          <command><![CDATA[
+            sh -c "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle && (wpctl get-volume @DEFAULT_AUDIO_SINK@ | grep -q MUTED && echo 0 > $WOBSOCK) || wpctl get-volume @DEFAULT_AUDIO_SINK@ | sed 's/[^0-9]//g' > $WOBSOCK"
+          ]]></command>
+      </action>
+    </keybind>
+
+    <keybind key="XF86AudioMicMute">
+      <action name="Execute">
+        <command>sh -c "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"</command>
+      </action>
+    </keybind>
+
+
     <keybind key="W-Left">
       <action name="ToggleSnapToEdge" direction="left" combine="yes"/>
     </keybind>
@@ -64,7 +95,7 @@
 
     <keybind key="W-Down">
       <action name="ToggleSnapToEdge" direction="down" combine="yes"/>
-    </keybind> -->
+    </keybind>
 
     <keybind key="W-1">
       <action name="GoToDesktop" to="1"/>
@@ -102,14 +133,13 @@
 
   <theme>
     <name>test</name>
-
     <icon>Hackneyed</icon>
     <dropShadows>yes</dropShadows>
-
     <font>
         <name>JetBrains Mono Nerd Font</name>
         <weight>bold</weight>
     </font>
+    <cornerRadius>0</cornerRadius>
   </theme>
 
   <libinput>

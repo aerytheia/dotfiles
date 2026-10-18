@@ -10,6 +10,7 @@
       self.nixosModules.fonts
       self.nixosModules.games
       self.nixosModules.hjem
+      self.nixosModules.ide
       self.nixosModules.locale
       self.nixosModules.networking
       self.nixosModules.nix

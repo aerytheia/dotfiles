@@ -22,7 +22,6 @@
 
       # maybe export my user or smthn
       users.users.ethan.packages = with pkgs; [
-        gram
         bitwarden-desktop
         hackneyed
         obsidian

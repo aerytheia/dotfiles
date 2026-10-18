@@ -19,7 +19,7 @@
         "waybar/config.jsonc".source = ../../home/waybar/config.jsonc;
         "waybar/style.css".source = ../../home/waybar/style.css;
 
-        "wayfire.ini".source = ../../home/wayfire/wayfire.ini;
+        "kanshi/config".source = ../../home/kanshi/config;
       };
 
       files = {

@@ -6,6 +6,8 @@
     environment.systemPackages = with pkgs; [
       wireplumber
       pulseaudio
+      pamixer
+      pavucontrol
     ];
 
     services.pipewire = {
