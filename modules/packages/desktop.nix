@@ -26,6 +26,7 @@
       grim
       slurp
       wob
+      swayosd
       kanshi
       waybar
       wl-clipboard

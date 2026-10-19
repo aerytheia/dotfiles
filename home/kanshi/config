@@ -1,3 +1,7 @@
 profile {
 	output DP-4 enable mode 3440x1440@144.001007
 }
+
+profile {
+	output eDP-1 enable scale 1.25
+}

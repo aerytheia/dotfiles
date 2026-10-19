@@ -2,5 +2,4 @@ kanshi >/dev/null 2>&1 &
 mako >/dev/null 2>&1 &
 waybar --log-level off &
 swaybg -i /home/ethan/.dotfiles/assets/wallpaper.png >/dev/null 2>&1 &
- 
-(rm -f $WOBSOCK && mkfifo $WOBSOCK && tail -f $WOBSOCK | wob) >/dev/null 2>&1 &
+swayosd-server >/dev/null 2>&1 &
