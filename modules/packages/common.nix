@@ -25,9 +25,11 @@
         bitwarden-desktop
         hackneyed
         obsidian
+        zathura
         gimp
         inkscape
         imagemagick
+        stremio-linux-shell
         (discord.override {
           withVencord = true;
         })

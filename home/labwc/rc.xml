@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <labwc_config>
   <core>
+    <decoration>server</decoration>
     <primarySelection>no</primarySelection>
   </core>
 
@@ -147,6 +148,11 @@
     </font>
     <cornerRadius>0</cornerRadius>
   </theme>
+
+  <windowRules>
+    <windowRule identifier="*" serverDecoration="yes" />
+  </windowRules>
+  
 
   <libinput>
     <device>

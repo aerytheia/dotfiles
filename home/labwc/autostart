@@ -1,5 +1,5 @@
 kanshi >/dev/null 2>&1 &
 mako >/dev/null 2>&1 &
 waybar --log-level off &
-swaybg -i /home/ethan/.dotfiles/assets/wallpaper.png >/dev/null 2>&1 &
+swaybg -i /home/ethan/.dotfiles/assets/wallpaper.png -m fill >/dev/null 2>&1 &
 swayosd-server >/dev/null 2>&1 &

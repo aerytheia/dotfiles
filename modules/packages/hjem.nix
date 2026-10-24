@@ -20,6 +20,11 @@
         "waybar/style.css".source = ../../home/waybar/style.css;
 
         "kanshi/config".source = ../../home/kanshi/config;
+        
+        "swayosd/config.toml".source = ../../home/swayosd/config.toml;
+        "swayosd/style.css".source = ../../home/swayosd/style.css;
+
+        "mako/config".source = ../../home/mako/config;
       };
 
       files = {
