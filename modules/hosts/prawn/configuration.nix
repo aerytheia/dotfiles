@@ -7,8 +7,8 @@
       self.nixosModules.browser
       self.nixosModules.common
       self.nixosModules.desktop
-      self.nixosModules.fonts
       self.nixosModules.games
+      self.nixosModules.fonts
       self.nixosModules.hjem
       self.nixosModules.ide
       self.nixosModules.locale

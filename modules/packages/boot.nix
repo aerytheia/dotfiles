@@ -16,7 +16,5 @@
       enable = true;
       theme = "bgrt";
     };
-
-    boot.initrd.systemd.enable = true;
   };
 }

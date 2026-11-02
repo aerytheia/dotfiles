@@ -1,84 +1,78 @@
 { self, inputs, ... }: {
-  flake.nixosModules.browser = { pkgs, ... }: {
-    programs.firefox = {
-      enable = true;
-      package = pkgs.librewolf;
+  flake.nixosModules.browser = { pkgs, ... }: 
+  let
+    librewolf = pkgs.librewolf.override {
+      extraPrefs = ''
+        lockPref("widget.use-xdg-desktop-portal.file-picker", 1);
 
-      preferences = {
-        # file picker
-        "widget.use-xdg-desktop-portal.file-picker" = 1;
-        # UGLY !!!
-        "browser.urlbar.scotchBonnet.enableOverride" = false;
-        "browser.toolbars.bookmarks.visibility" = "never";
-        "browser.urlbar.shortcuts.bookmarks" = false;
-        "browser.urlbar.shortcuts.history" = false;
-        "browser.urlbar.shortcuts.tabs" = false;
+        lockPref("browser.urlbar.scotchBonnet.enableOverride", false);
+        lockPref("browser.urlbar.shortcuts.bookmarks", false);
+        lockPref("browser.urlbar.shortcuts.history", false);
+        lockPref("browser.urlbar.shortcuts.tabs", false);
+        lockPref("toolbars.bookmarks.visibility", "never");
 
-        # server side decorations
-        "browser.tabs.inTitlebar" = 0;
-        "browser.nova.enabled" = false;
+        lockPref("browser.tabs.inTitlebar", 0);
+        lockPref("browser.nova.enabled", false);
 
-        "media.videocontrols.picture-in-picture.video-toggle.enabled" = false;
-        "media.videocontrols.picture-in-picture.audio-toggle.enabled" = false;
+        lockPref("media.videocontrols.picture-in-picture.video-toggle.enabled", false);
+        lockPref("media.videocontrols.picture-in-picture.audio-toggle.enabled", false);
 
-        "privacy.resistFingerprinting" = false;
-        "privacy.fingerprintingProtection" = true;
-        "privacy.fingerprintingProtection.overrides" = "+AllTargets,-CSSPrefersColorScheme,-JSDateTimeUTC";
+        lockPref("privacy.resistFingerprinting", false);
+        lockPref("privacy.fingerprintingProtection", true);
+        lockPref("privacy.fingerprintingProtection.overrides", "+AllTargets,-CSSPrefersColorScheme,-JSDateTimeUTC");
 
-        "browser.uiCustomization.state" = builtins.toJSON {
-          placements = {
-            widget-overflow-fixed-list = [ ];
-            unified-extensions-area = [
+        pref("browser.uiCustomization.state", {
+          "placements": {
+            "widget-overflow-fixed-list": [],
+            "unified-extensions-area": [],
+            "nav-bar": [
+              "back-button",
+              "forward-button",
+              "stop-reload-button",
+              "customizableui-special-spring1",
+              "vertical-spacer",
+              "urlbar-container",
+              "customizableui-special-spring2",
+              "downloads-button",
+              "fxa-toolbar-menu-button",
+              "reset-pbm-toolbar-button",
+              "unified-extensions-button",
               "ublock0_raymondhill_net-browser-action"
-            ];
-            nav-bar = [
-              "back-button"
-              "forward-button"
-              "stop-reload-button"
-              "customizableui-special-spring1"
-              "vertical-spacer"
-              "urlbar-container"
-              "customizableui-special-spring2"
-              "downloads-button"
-              "fxa-toolbar-menu-button"
-              "reset-pbm-toolbar-button"
-              "unified-extensions-button"
-            ];
-            toolbar-menubar = [
+            ],
+            "toolbar-menubar": [
               "menubar-items"
-            ];
-            TabsToolbar = [
-              "tabbrowser-tabs"
-              "new-tab-button"
-              "customizableui-special-spring3"
-              "smartwindow-group-tabs-button"
+            ],
+            "TabsToolbar": [
+              "tabbrowser-tabs",
+              "new-tab-button",
+              "customizableui-special-spring3",
+              "smartwindow-group-tabs-button",
               "ai-window-toggle"
-            ];
-            vertical-tabs = [ ];
-            PersonalToolbar = [
+            ],
+            "vertical-tabs": [],
+            "PersonalToolbar": [
               "personal-bookmarks"
-            ];
-          };
-          seen = [
-            "reset-pbm-toolbar-button"
-            "developer-button"
-            "screenshot-button"
+            ]
+          },
+          "seen": [
+            "reset-pbm-toolbar-button",
+            "developer-button",
+            "screenshot-button",
             "ublock0_raymondhill_net-browser-action"
-          ];
-          dirtyAreaCache = [
-            "nav-bar"
-            "TabsToolbar"
-            "vertical-tabs"
-            "toolbar-menubar"
+          ],
+          "dirtyAreaCache": [
+            "nav-bar",
+            "TabsToolbar",
+            "vertical-tabs",
+            "toolbar-menubar",
             "PersonalToolbar"
-            "unified-extensions-area"
-          ];
-          currentVersion = 26;
-          newElementCount = 5;
-        };
-      };
-
-      policies = {
+          ],
+          "currentVersion": 28,
+          "newElementCount": 4
+        });
+      '';
+      
+      extraPolicies = {
         NoDefaultBookmarks = true;
 
         ExtensionSettings = {
@@ -115,7 +109,9 @@
         };
       };
     };
-
-    environment.etc."firefox/policies/policies.json".target = "librewolf/policies/policies.json";
+  in {
+    environment.systemPackages = [ 
+      librewolf 
+    ];
   };
 }

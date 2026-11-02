@@ -20,7 +20,7 @@
 
     users.users.ethan.packages = with pkgs; [
       prismlauncher
-      
+      vinegar
       (heroic.override {
         extraPkgs =
           pkgs': with pkgs'; [
