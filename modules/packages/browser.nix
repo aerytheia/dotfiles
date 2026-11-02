@@ -21,6 +21,10 @@
         "media.videocontrols.picture-in-picture.video-toggle.enabled" = false;
         "media.videocontrols.picture-in-picture.audio-toggle.enabled" = false;
 
+        "privacy.resistFingerprinting" = false;
+        "privacy.fingerprintingProtection" = true;
+        "privacy.fingerprintingProtection.overrides" = "+AllTargets,-CSSPrefersColorScheme,-JSDateTimeUTC";
+
         "browser.uiCustomization.state" = builtins.toJSON {
           placements = {
             widget-overflow-fixed-list = [ ];
@@ -87,13 +91,14 @@
         SearchEngines = {
           Add = [
             {
-              Name = "Google";
-              URLTemplate = "https://www.google.com/search?q={searchTerms}";
-              IconURL = "https://www.google.com/favicon.ico";
+              Name = "DuckDuckGo";
+              URLTemplate = "https://noai.duckduckgo.com/?q={searchTerms}";
+              IconURL = "https://noai.duckduckgo.com/favicon.ico";
+              SuggestURLTemplate = "https://noai.duckduckgo.com/ac/?q={searchTerms}&type=list";
             }
           ];
 
-          Default = "Google";
+          Default = "DuckDuckGo";
 
           Remove = [
             "DuckDuckGo No-AI"
