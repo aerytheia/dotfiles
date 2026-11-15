@@ -10,6 +10,13 @@
     programs.labwc.enable = true;
     services.displayManager.ly.enable = true;
 
+    services.gnome.gnome-keyring.enable = true;
+
+    programs.sway = {
+      enable = true;
+      wrapperFeatures.gtk = true;
+      package = pkgs.swayfx;
+    };
 
     programs.dconf.enable = true;
     programs.dconf.profiles.user.databases = [{
@@ -22,10 +29,8 @@
       winetricks
       wlr-randr
       mako
-      pywalfox-native
       grim
       slurp
-      wob
       swayosd
       kanshi
       waybar

@@ -30,15 +30,8 @@
         inkscape
         imagemagick
         stremio-linux-shell
-        (discord.override {
-          withVencord = true;
-        })
+        vesktop
       ];
-
-      programs.direnv = {
-        enable = true;
-        nix-direnv.enable = true;
-      };
 
       programs.nix-ld = {
         enable = true;
