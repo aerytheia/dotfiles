@@ -16,8 +16,26 @@
     # will configure in hjem later, just for now
     programs.dconf.enable = true;
     programs.dconf.profiles.user.databases = [{
-        settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
+        lockAll = false;
+        settings = {
+            "org/gnome/desktop/interface" = {
+                gtk-theme = "Adwaita-dark";
+                color-scheme = "prefer-dark";
+            };
+        };
     }];
+
+    qt = {
+        enable = true;
+        style = "kvantum";
+        platformTheme = "qt5ct";
+    };
+
+    environment.systemPackages = [
+        pkgs.gnome-themes-extra
+        pkgs.qt6Packages.qt6ct
+        pkgs.qt6Packages.qtstyleplugin-kvantum
+    ];
 
     # idk if i need this
     # programs.nix-ld = {

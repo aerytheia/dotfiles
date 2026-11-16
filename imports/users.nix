@@ -127,6 +127,14 @@ in {
         ];
     };
 
+    fonts.fontconfig.enable = true;
+    fonts.packages = with pkgs; [
+        nerd-fonts.jetbrains-mono
+        inter
+        noto-fonts
+        noto-fonts-color-emoji
+    ];
+
     programs.zsh.enable = true;
 
     nix.settings.trusted-users = [ "ethan" ];
@@ -197,6 +205,7 @@ in {
         environment.sessionVariables = {
             SSH_AUTH_SOCK = "/home/ethan/.bitwarden-ssh-agent.sock";
             XCURSOR_THEME = "Hackneyed";
+            SWAY_UNSUPPORTED_GPU = "true";
         };
         
         xdg.config.files = {
