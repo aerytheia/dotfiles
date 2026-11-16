@@ -1,23 +1,29 @@
 {
-  description = "ethans awesome configuration";
+    inputs = {
+        nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+        nixpkgs-isabelle.url = "github:NixOS/nixpkgs/c57fe4bc08d5a2968940cff2147c50dc7d066cdb";
 
-  inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+        nix-flatpak.url = "github:gmodena/nix-flatpak";
+        hjem.url = "github:feel-co/hjem";
+        spicetify-nix.url = "github:Gerg-L/spicetify-nix";
+        matugen.url = "github:InioX/Matugen";
+    };
 
-    nixpkgs-isabelle.url = "github:NixOS/nixpkgs/c57fe4bc08d5a2968940cff2147c50dc7d066cdb";
+    outputs = { self, nixpkgs, ... }@inputs: let 
+        sharedModules = [
+            inputs.hjem.nixosModules.default
+            inputs.nix-flatpak.nixosModules.nix-flatpak
+            inputs.spicetify-nix.nixosModules.spicetify
+        ];
+    in {
+        nixosConfigurations.lobster = nixpkgs.lib.nixosSystem {
+            specialArgs = { inherit inputs; };
+            modules = sharedModules ++ [ ./hosts/lobster/configuration.nix ];
+        };
 
-    flake-parts.url = "github:hercules-ci/flake-parts";
-    import-tree.url = "github:vic/import-tree";
-
-    nix-flatpak.url = "github:gmodena/nix-flatpak";
-
-    hjem.url = "github:feel-co/hjem";
-    
-    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
-    matugen.url = "github:InioX/Matugen";
-  };
-
-  outputs = inputs: inputs.flake-parts.lib.mkFlake
-    { inherit inputs; }
-    (inputs.import-tree ./modules);
+        nixosConfigurations.prawn = nixpkgs.lib.nixosSystem {
+            specialArgs = { inherit inputs; };
+            modules = sharedModules ++ [ ./hosts/prawn/configuration.nix ];
+        };
+    };
 }
