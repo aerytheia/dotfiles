@@ -4,6 +4,7 @@
         enable = true;
         wrapperFeatures.gtk = true;
         package = pkgs.swayfx;
+        extraPackages = with pkgs; [ swayidle swaylock wmenu ];
     };
 
     security.polkit.enable = true;
