@@ -16,5 +16,7 @@
     hardware.bluetooth.enable = true;
     services.tuned.enable = true;
     services.upower.enable = true;
+
+    services.flatpak.enable = true;    
     system.stateVersion = "26.05";
 }

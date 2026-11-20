@@ -114,6 +114,22 @@
             };
         };
     };      
+
+
+    otter-launcher = pkgs.rustPlatform.buildRustPackage (finalAttrs: {
+        pname = "otter-launcher";
+        version = "v0.8.2";
+
+        src = pkgs.fetchFromGitHub {
+            owner = "kuokuo123";
+            repo = "otter-launcher";
+            tag = finalAttrs.version;
+            hash = "sha256-UfBTQMR/vZ3XQJRX5XwIP+nMcB5qLQo0pBR1jvavmqg=";
+        };
+
+        cargoHash = "sha256-SlwIGNNUS64efRBAf3xrg7If6mn/ZGgeeBaNwut30Q4=";
+    });
+
 in {
     users.users.ethan = {
         shell = pkgs.zsh;
@@ -126,14 +142,6 @@ in {
             "audio"
         ];
     };
-
-    fonts.fontconfig.enable = true;
-    fonts.packages = with pkgs; [
-        nerd-fonts.jetbrains-mono
-        inter
-        noto-fonts
-        noto-fonts-color-emoji
-    ];
 
     programs.zsh.enable = true;
 
@@ -155,7 +163,7 @@ in {
             gimp
             inkscape
             imagemagick
-            stremio-linux-shell
+            # stremio-linux-shell
             vesktop
 
             browser
@@ -168,10 +176,12 @@ in {
             waybar
             wl-clipboard
 
-            inputs.matugen.packages.${stdenv.hostPlatform.system}.default        
+            # inputs.matugen.packages.${stdenv.hostPlatform.system}.default        
             
             alacritty
             fuzzel
+            fsel
+            otter-launcher
             fastfetch
             git
             kdePackages.dolphin

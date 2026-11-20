@@ -9,6 +9,11 @@ set $right l
 set $term alacritty
 set $menu fuzzel
 
+set $menualt alacritty --title launcher -e otter-launcher
+for_window [title="^launcher$"] floating enable, resize set width 500 height 430, border none
+
+
+
 ### Output configuration
 exec_always {
     pkill kanshi
@@ -30,6 +35,13 @@ exec_always {
 #   }
 #
 
+input type:touchpad {
+    tap enabled
+    natural_scroll enabled
+    middle_emulation enabled
+}
+
+output "*" bg /home/ethan/.dotfiles/assets/wallpaper.png fill
 
 animation_duration_ms 125
 
@@ -37,12 +49,18 @@ titlebar_separator disable
 
 focus_follows_mouse no
 
+font "JuliaMonoForced Nerd Font 10"
+
 gaps inner 4
+
+exec swayosd-server
+exec mako
 
 ### Key bindings
 bindsym $mod+T exec $term
 bindsym $mod+q kill
 bindsym $mod+d exec $menu
+bindsym $mod+Shift+d exec $menualt
 
 floating_modifier $mod normal
 
@@ -143,10 +161,10 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-bindsym --locked XF86AudioMute exec pactl set-sink-mute \@DEFAULT_SINK@ toggle
-bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume \@DEFAULT_SINK@ -5%
-bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume \@DEFAULT_SINK@ +5%
-bindsym --locked XF86AudioMicMute exec pactl set-source-mute \@DEFAULT_SOURCE@ toggle
+bindsym --locked XF86AudioMute exec swayosd-client --output-volume mute-toggle
+bindsym --locked XF86AudioLowerVolume exec swayosd-client --output-volume lower
+bindsym --locked XF86AudioRaiseVolume exec swayosd-client --output-volume raise
+bindsym --locked XF86AudioMicMute exec swayosd-client --input-volume mute-toggle
 
 bindsym --locked XF86AudioPlay exec playerctl play-pause
 bindsym --locked XF86AudioPause exec playerctl play-pause
@@ -154,24 +172,14 @@ bindsym --locked XF86AudioPrev exec playerctl previous
 bindsym --locked XF86AudioNext exec playerctl next
 bindsym --locked XF86AudioStop exec playerctl stop
 
-bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
-bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
+bindsym --locked XF86MonBrightnessDown exec swayosd-client --brightness lower
+bindsym --locked XF86MonBrightnessUp exec swayosd-client --brightness raise
 
 bindsym Print exec grim
 
 
 bar {
-    position top
-
-    # When the status_command prints a new line to stdout, swaybar updates.
-    # The default just shows the current date and time.
-    status_command while date +'%Y-%m-%d %X'; do sleep 1; done
-
-    colors {
-        statusline #ffffff
-        background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
-    }
+    swaybar_command waybar
 }
 
 include @sysconfdir@/sway/config.d/*
